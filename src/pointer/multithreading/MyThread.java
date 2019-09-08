@@ -9,14 +9,14 @@ public class MyThread extends Thread {
 
     @Override
     public void run() {
+        if (count <= 0) {
+            System.out.println("0");
+            return;
+        }
         int[] fibonacci = new int[count];
 
-        if (count > 0) {
-            fibonacci[0] = 1;
-        }
-
-        if (count > 1) {
-            fibonacci[1] = 1;
+        for (int i = 0; i < 2 && i < count; i++) {
+            fibonacci[i] = 1;
         }
 
         for (int i = 2; i < count; i++) {
